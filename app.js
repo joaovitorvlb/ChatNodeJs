@@ -16,6 +16,9 @@ app.use('/', (req, res) =>{
 
 io.on('connection', socket => {
 	console.log(`Socket connection: ${socket.id}`)
+	socket.on('sendMessage', data => {
+		console.log(data);
+	})
 });
 
 server.listen(3000);
