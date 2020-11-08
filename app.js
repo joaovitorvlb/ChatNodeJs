@@ -14,10 +14,12 @@ app.use('/', (req, res) =>{
 	res.render('index.html');
 });
 
+list messages = [];
+
 io.on('connection', socket => {
 	console.log(`Socket connection: ${socket.id}`)
 	socket.on('sendMessage', data => {
-		console.log(data);
+		messages.push(data);
 	})
 });
 
