@@ -16,6 +16,6 @@ app.use('/', (req, res) =>{
 
 io.on('connection', socket => {
 	console.log(`Socket connection: ${socket.id}`)
-})
+});
 
 server.listen(3000);
