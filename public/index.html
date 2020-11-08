@@ -27,6 +27,12 @@
 			renderMessage(message);
 		});
 
+		socket.on('previowsMessages', function(messages){
+			for(message of messages){
+				renderMessage(message);
+			}
+		});
+
 		$('#chat').submit(function(event){
 			event.preventDefault();
 

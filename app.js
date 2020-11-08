@@ -18,6 +18,9 @@ let messages = [];
 
 io.on('connection', socket => {
 	console.log(`Socket connection: ${socket.id}`);
+
+	socket.emit('previowsMessages', messages);
+	
 	socket.on('sendMessage', data => {
 		messages.push(data);
 		console.log('oi');
