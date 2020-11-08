@@ -22,6 +22,7 @@ io.on('connection', socket => {
 		messages.push(data);
 		console.log('oi');
 		socket.broadcast.emit('receivedMessage', data);
+		socket.emit('receivedMessage', data);
 	});
 });
 
